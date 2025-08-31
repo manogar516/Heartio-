@@ -1,13 +1,17 @@
 {
-  "name": "realtime-chat",
+  "name": "heartio",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple real-time chat app using Express and Socket.io",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
+  "keywords": [
+    "chat",
+    "express",
+    "socket.io",
+    "real-time"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
