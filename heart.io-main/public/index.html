@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PassionChat Groups</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes floatHearts {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+    .floating-heart {
+      position: fixed;
+      font-size: 24px;
+      color: rgba(255, 105, 180, 0.6);
+      animation: floatHearts 8s linear forwards;
+      pointer-events: none;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Hearts Background -->
+  <div id="heartsContainer"></div>
+  
+  <!-- Username Overlay -->
+  <div id="usernamePrompt" class="overlay animate__animated animate__fadeIn">
+    <div class="overlay-box animate__animated animate__pulse animate__infinite">
+      <h2>Your Heart's Connection ❤️🔥</h2>
+      <input type="text" id="usernameInput" placeholder="Your romantic name..." />
+      <button onclick="setUsername()">Begin Romance</button>
+    </div>
+  </div>
+
+  <!-- Chat Container -->
+  <div class="chat-container animate__animated animate__fadeInUp">
+    <header class="chat-header">
+      <h1>❤️🔥 Eternal Flame Chat 🔥❤️</h1>
+      <p id="typingIndicator"></p>
+    </header>
+
+    <ul id="messages" class="chat-messages"></ul>
+
+    <form id="chatForm" class="chat-form">
+      <input id="messageInput" autocomplete="off" placeholder="Whisper sweet words..." />
+      <button type="submit">💘</button>
+    </form>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
